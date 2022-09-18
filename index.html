@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="main">
+    <header>
+        <span class="title">My Tweet / Home</span>
+        <button id="newTweetBtn" class="btn btn-primary">Tweet</button>
+    </header>
+    <div class="section">
+        <div class="container">
+            <ul id="tweetList"></ul>
+        </div>
+    </div>
+</div>
+<div id="editModal" style="display: none">
+    <div class="mark"></div>
+    <div class="edit-modal">
+        <header>Tweet</header>
+        <div class="form">
+            <div class="form-control">
+                <textarea id="input" placeholder="What's happening"></textarea>
+            </div>
+            <div class="btn-group">
+                <button id="tweetBtn" class="btn btn-primary" disabled>Tweet</button>
+                <button id="closeBtn" class="btn btn-default">close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="loading">loading</div>
+
+<script src="./axios.min.js"></script>
+<script src="./fetch.js"></script>
+<script src="./main.js"></script>
+</body>
+</html>

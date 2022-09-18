@@ -1,0 +1,252 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: rgb(230, 236, 240);
+}
+
+pre{
+    margin: 0;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#loading {
+    width: 140px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, .5);
+    position: absolute;
+    left: 50%;
+    top: 140px;
+    transform: translateX(-50%);
+    font-size: 20px;
+    z-index: 1000;
+}
+
+#loading:after {
+    display: inline;
+    content: '';
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+    0% {
+        content: '';
+    }
+    25% {
+        content: '.';
+    }
+    50% {
+        content: '..';
+    }
+    75% {
+        content: '...';
+    }
+    100% {
+        content: '';
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.main header .title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.main header {
+    height: 60px;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 0 15px;
+}
+
+.main .section {
+    flex: 1 1 auto;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.main .section .container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+#tweetList {
+    padding-left: 15px;
+}
+
+#tweetList > .item {
+    padding: 10px;
+    padding-left: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#tweetList > .item > .item-header {
+    line-height: 1.5;
+}
+
+#tweetList > .item > .item-header > .author {
+    color: rgb(20, 23, 26);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#tweetList > .item > .item-header > .label {
+    display: inline-block;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    padding: 0 4px;
+    border-radius: 4px;
+    color: rgb(101, 119, 134);
+}
+
+#tweetList > .item > .item-header > .time {
+    color: rgb(101, 119, 134);
+    font-size: 12px;
+}
+
+#tweetList > .item > .item-body {
+    color: rgb(20, 23, 26);
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+#tweetList > .item > .item-footer {
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#tweetList > .item > .item-footer > a {
+    color: rgb(101, 119, 134);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#tweetList > .item > .item-footer > a.link {
+    color: rgb(23, 191, 99);
+}
+
+#tweetList > .item > .item-footer > a:hover {
+    color: rgb(27, 149, 224);
+}
+
+.edit-modal{
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+    width: 600px;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.mark {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.edit-modal > header {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.edit-modal .form {
+    padding: 10px 0;
+}
+
+.edit-modal .form .form-control {
+    padding: 6px 15px;
+}
+
+.edit-modal .form textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    outline: none;
+}
+
+.edit-modal .form .btn-group {
+    padding: 0 15px 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-modal .form .btn-group .btn + .btn {
+    margin-left: 10px;
+}
+
+.btn{
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.btn-default {
+    border: 1px solid #ccc;
+    color: #3f3f3f;
+}
+
+.btn-primary {
+    background-color: rgb(29, 161, 242);
+    color: #fff;
+}
+
+.btn:hover {
+    opacity: .9;
+}
+
+.btn:active {
+    opacity: .7;
+}
+
+.btn[disabled] {
+    opacity: .5;
+    cursor: not-allowed;
+}
